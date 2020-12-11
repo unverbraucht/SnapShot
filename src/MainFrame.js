@@ -5,6 +5,9 @@ import Item from "./components/Item";
 import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 
+import './index.css';
+import './App.css';
+
 class MainFrame extends Component {
     // Prevent page reload, clear input, set URL and push history on submit
     handleSubmit = (e, history, searchInput) => {
