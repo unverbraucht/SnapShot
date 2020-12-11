@@ -4,10 +4,12 @@
   "private": true,
   "homepage": "https://Yog9.github.io/SnapShot",
   "dependencies": {
+    "@loadable/server": "^5.14.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "express": "4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -19,7 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
+    "dev:start": "nodemon ./server-build/index.js",
+    "dev": "npm-run-all --parallel build dev:*"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +40,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@babel/preset-react": "7.10.4",
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/webpack-plugin": "^5.14.0",
+    "babel-loader": "8.1.0",
+    "nodemon": "2.0.4",
+    "npm-run-all": "4.1.5",
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.12",
+    "webpack-node-externals": "1.7.2"
   }
 }
